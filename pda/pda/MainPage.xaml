@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:pda"
+             x:Class="pda.MainPage"
+             Title="My Personal Dictionary">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" Visual="Material" HasShadow="True" CornerRadius="20" Margin="20,5,20,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0">
+                    <Entry x:Name="tb_word" BackgroundColor="Transparent" Placeholder="Enter Some Text" Visual="Material" IsTextPredictionEnabled="True"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1">
+                    <ImageButton x:Name="btn_search" BackgroundColor="Transparent" Source="search.png"  Aspect="AspectFit" Clicked="Btn_search_OnClicked"/>
+                </StackLayout>
+            </Grid>
+
+        </Frame>
+        <StackLayout Grid.Row="1" Margin="30,5,20,0">
+            <Label x:Name="lb_translate" FontSize="20" VerticalTextAlignment="Start"></Label>
+        </StackLayout>
+
+        <StackLayout Grid.Row="3">
+            <Frame HasShadow="False" BackgroundColor="Transparent" Margin="0,0,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0">
+                        <Button x:Name="btn_change" Text="Tr>En" Visual="Material" Margin="20,0,10,0" Clicked="Btn_change_OnClicked"></Button>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <Button  x:Name="btn_conf" Text="Config" Visual="Material" Margin="10,0,20,0" Clicked="Btn_conf_OnClicked"></Button>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
